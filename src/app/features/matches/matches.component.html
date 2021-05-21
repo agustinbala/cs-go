@@ -1,0 +1,6 @@
+<h2>My matches</h2>
+<ul class="matches">
+  <li *ngFor="let match of matches" (click)="onSelectMatch(match)">
+    <span class="badge">{{match.link}}</span> {{match.time}}
+  </li>
+</ul>
