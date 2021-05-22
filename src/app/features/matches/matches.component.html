@@ -8,7 +8,7 @@
   <mat-grid-list cols="6" gutterSize="3px" rowHeight="1.3:1">
     <mat-grid-tile (click)="onSelectMatch(match);$event.stopPropagation();"
       *ngFor="let match of currentMatches; let i=index;">
-       <app-match-item  [match]="match"></app-match-item>
+       <app-match-item [isRunning]="true" [match]="match"></app-match-item>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

@@ -3,7 +3,7 @@ export interface IMatch {
     link: string
     time: string
     event: IEvent
-    stars: number
+    stars: boolean
     map: string
     teams: ITeam[]
 }

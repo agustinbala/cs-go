@@ -1,9 +1,11 @@
 export const CONFIG = {
-  BASE: 'http://www.hltv.org',
+  BASE: 'https://api.pandascore.co/csgo',
   CDN: 'https://img-cdn.hltv.org',
   RSS: '/rss',
   RESULTS: '/results',
-  MATCHES: '/matches',
+  MATCHES_RUNNING: '/matches/running',
+  MATCHES_UPCOMING: '/matches/upcoming',
+  TOKEN: '?token=IBH5zLHJwrgDdexCZeh8vG7IhIS3Uexx08Ms5-iecMuDqS911FQ'
 }
 
 export const MAPS = {

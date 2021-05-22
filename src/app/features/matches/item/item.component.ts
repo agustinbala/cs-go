@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { IMatch } from 'src/app/model/match';
 
 @Component({
@@ -9,10 +10,16 @@ import { IMatch } from 'src/app/model/match';
 export class ItemComponent implements OnInit {
 
   @Input() match: IMatch;
+  @Input() isRunning: boolean = false;
 
-  constructor() { }
+  constructor(private sanitization: DomSanitizer) { }
 
   ngOnInit() {
+    
+  }
+
+  getBackground() {
+    return this.sanitization.bypassSecurityTrustStyle(`url(${this.match.event.crest})`);
   }
 
 }

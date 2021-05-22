@@ -10,6 +10,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ItemComponent } from './features/matches/item/item.component';
 import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { ReplacePipe } from './pipe/replace.pipe';
+
 
 
 
@@ -18,7 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
   declarations: [
     AppComponent,
     MatchesComponent,
-    ItemComponent
+    ItemComponent,
+    ReplacePipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatGridListModule, 
     MatCardModule, 
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
