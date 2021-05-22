@@ -15,5 +15,6 @@ interface IEvent {
 
 interface ITeam {
     name: string
-    crest: string
+    crest: string,
+    score: number
 }

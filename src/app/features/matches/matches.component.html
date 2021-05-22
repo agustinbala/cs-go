@@ -1,6 +1,47 @@
-<h2>My matches</h2>
-<ul class="matches">
-  <li *ngFor="let match of matches" (click)="onSelectMatch(match)">
-    <span class="badge">{{match.link}}</span> {{match.time}}
-  </li>
-</ul>
+<mat-toolbar color="primary">
+  <span>Partidas</span>
+</mat-toolbar>
+<mat-toolbar color="accent" *ngIf="currentMatches.length > 0">
+  <span>Partidas en vivo</span>
+</mat-toolbar>
+<div class="mat-body" *ngIf="currentMatches.length > 0">
+  <mat-grid-list cols="6" gutterSize="3px" rowHeight="1.3:1">
+    <mat-grid-tile (click)="onSelectMatch(match);$event.stopPropagation();"
+      *ngFor="let match of currentMatches; let i=index;">
+       <app-match-item  [match]="match"></app-match-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<mat-toolbar color="accent" *ngIf="todayMatches.length > 0">
+  <span>Partidas de hoy</span>
+</mat-toolbar>
+<div class="mat-body" *ngIf="todayMatches.length > 0">
+  <mat-grid-list cols="6" gutterSize="3px" rowHeight="1.3:1">
+    <mat-grid-tile (click)="onSelectMatch(match);$event.stopPropagation();"
+      *ngFor="let match of todayMatches; let i=index;">
+       <app-match-item  [match]="match"></app-match-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<mat-toolbar color="accent" *ngIf="tomorrowMatches.length > 0">
+  <span>Partidas de mañana</span>
+</mat-toolbar>
+<div class="mat-body" *ngIf="tomorrowMatches.length > 0">
+  <mat-grid-list cols="6" gutterSize="3px" rowHeight="1.3:1">
+    <mat-grid-tile (click)="onSelectMatch(match);$event.stopPropagation();"
+      *ngFor="let match of tomorrowMatches; let i=index;">
+       <app-match-item  [match]="match"></app-match-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<mat-toolbar color="accent">
+  <span>Próximos dias</span>
+</mat-toolbar>
+<div class="mat-body">
+  <mat-grid-list cols="6" gutterSize="3px" rowHeight="1.3:1">
+    <mat-grid-tile  (click)="onSelectMatch(match);$event.stopPropagation();"
+      *ngFor="let match of nextDaysMatches; let i=index;">
+       <app-match-item [match]="match"></app-match-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -1,0 +1,25 @@
+.mat-card-actions .mat-button{
+    margin : 0px 0px;
+  }
+  
+  .mat-card {
+    padding : 16px;
+    width: 260px;
+    height: 180px;
+  }
+  
+  .mat-card-actions {
+    position: absolute; bottom: 15px;
+  }
+  
+  .mat-card-avatar {
+    border-radius: 0%;
+  }
+
+  
+  .material-icons.yellow { 
+    color: #e0f806; 
+    font-size: 18px; 
+    position: relative;
+    bottom: -4px;
+}
