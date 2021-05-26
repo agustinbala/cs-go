@@ -9,7 +9,8 @@
   }
   
   .mat-card-actions {
-    position: absolute; bottom: 15px;
+    position: absolute; 
+    bottom: 15px;
   }
   
   .mat-card-avatar {

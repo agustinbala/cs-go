@@ -28,6 +28,7 @@ export interface MatchResponse {
   
   interface StreamDetailResponse {
     raw_url: string
+    embed_url: string
   }
   
   interface OpponentsResponse {

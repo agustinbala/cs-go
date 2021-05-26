@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CONFIG, MAPS } from './config';
-import * as cheerio from 'cheerio'
-import fetch from 'node-fetch'
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CONFIG } from './config';
+import { HttpClient } from '@angular/common/http';
 import { MatchResponse } from './response/match-response';
 
 

@@ -6,6 +6,7 @@ export interface IMatch {
     stars: boolean
     map: string
     teams: ITeam[]
+    hltvLink : string
 }
 
 interface IEvent {

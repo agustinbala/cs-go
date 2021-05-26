@@ -11,6 +11,8 @@ export class ItemComponent implements OnInit {
 
   @Input() match: IMatch;
   @Input() isRunning: boolean = false;
+  showVideo = false;
+  showStats = false;
 
   constructor(private sanitization: DomSanitizer) { }
 
@@ -20,6 +22,14 @@ export class ItemComponent implements OnInit {
 
   getBackground() {
     return this.sanitization.bypassSecurityTrustStyle(`url(${this.match.event.crest})`);
+  }
+
+  showVideoFrame(){
+    this.showVideo = !this.showVideo;
+  }
+
+  getVideoLink() {
+    return this.sanitization.bypassSecurityTrustResourceUrl(`${this.match.link}`);
   }
 
 }

@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
   <span>Partidas</span>
 </mat-toolbar>
+<!--------------- PARTIDAS EN VIVO --------------->
 <mat-toolbar color="accent" *ngIf="currentMatches.length > 0">
   <span>Partidas en vivo</span>
 </mat-toolbar>
@@ -12,6 +13,7 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+<!--------------- PARTIDAS DE HOY --------------->
 <mat-toolbar color="accent" *ngIf="todayMatches.length > 0">
   <span>Partidas de hoy</span>
 </mat-toolbar>
@@ -23,6 +25,7 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+<!--------------- PARTIDAS DE MAÑANA --------------->
 <mat-toolbar color="accent" *ngIf="tomorrowMatches.length > 0">
   <span>Partidas de mañana</span>
 </mat-toolbar>
@@ -34,6 +37,7 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+<!--------------- PARTIDAS DE PROXIMOS DIAS --------------->
 <mat-toolbar color="accent">
   <span>Próximos dias</span>
 </mat-toolbar>

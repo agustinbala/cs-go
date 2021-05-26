@@ -12,6 +12,8 @@ import { ItemComponent } from './features/matches/item/item.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ReplacePipe } from './pipe/replace.pipe';
+import { StatsComponent } from './features/matches/stats/stats.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -22,7 +24,8 @@ import { ReplacePipe } from './pipe/replace.pipe';
     AppComponent,
     MatchesComponent,
     ItemComponent,
-    ReplacePipe
+    ReplacePipe,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { ReplacePipe } from './pipe/replace.pipe';
     MatCardModule, 
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule, 
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

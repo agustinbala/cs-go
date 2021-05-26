@@ -12,8 +12,18 @@
     
   </mat-card-content>
   <mat-card-actions>
-    <a mat-button href="https://hltv.org{{match.link}}" target="_blank">HLTV</a>
     <a mat-button href="https://gg.bet/en/esports/match/{{match.teams[0].name | replace : ' ' : '-' }}-vs-{{match.teams[1].name | replace : ' ' : '-' }}-{{match.time | date:'dd-MM':'+0000' }}" target="_blank">GG.BET</a>
-    <a mat-button href="{{match.link}}" target="_blank">TWITCH</a>
+    <a mat-button (click)="showVideoFrame()">TWITCH</a>
+    <a mat-button target="_blank" href="https://www.hltv.org{{match.hltvLink}}" >HLTV</a>
+    <a mat-button (click)="showStats = true" >STATS</a>
+    
   </mat-card-actions>
 </mat-card>
+
+
+<iframe id="video" (click)="showVideoFrame()" *ngIf="showVideo" #video  style="z-index: 1000;object-fit:fill; width:50vw;height:50vh; top: 0vw; left: 25vw; position: fixed" [src]="getVideoLink()" frameborder="0" allowfullscreen>
+</iframe>
+
+<app-match-stats [match]='match' *ngIf="showStats" (close)="showStats = false">
+  <div>El paciente no se conectó a la videollamada.</div>
+</app-match-stats>

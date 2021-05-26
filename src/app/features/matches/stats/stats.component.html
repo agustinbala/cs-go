@@ -1,0 +1,22 @@
+<div class="modal-overlay" (click)="close()"></div>
+<div class="modal">
+  <mat-toolbar color="accent">
+    <span>Estadisticas {{match.teams[0].name}} vs {{match.teams[1].name}}</span>
+  </mat-toolbar>
+  <div class="mat-body">
+    <div>
+      <span style="width: 33%;"></span>
+      <span style="width: 33%;">{{match.teams[0].name}}</span>
+      <span style="width: 33%;">{{match.teams[1].name}}</span>
+    </div>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let map of stats.mapsStats; let i=index;" role="listitem">
+        <div>
+          <span style="width: 33%;">{{map.map}}</span>
+          <a style="width: 33%;" target="_blank" href="https://www.htlv.org/{{map.team1MapDetailLink}}"> <mat-icon *ngIf="map.team1Pick">done</mat-icon> {{map.team1WinPercentage}} - {{map.team1MapTimesPlayed}} veces</a>
+          <a style="width: 33%;" target="_blank" href="https://www.htlv.org/{{map.team2MapDetailLink}}"> <mat-icon *ngIf="map.team2Pick">done</mat-icon> {{map.team2WinPercentage}} - {{map.team2MapTimesPlayed}} veces</a>
+        </div>
+      </mat-list-item>
+  </mat-list>
+</div>
+</div>
