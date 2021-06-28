@@ -1,0 +1,12 @@
+.input-number {
+  text-align: right;
+}
+
+input.input-number::-webkit-outer-spin-button,
+input.input-number::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.input-number {
+  -moz-appearance: textfield;
+}

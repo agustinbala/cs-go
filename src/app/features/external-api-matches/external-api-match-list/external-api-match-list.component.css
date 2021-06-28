@@ -1,0 +1,44 @@
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 30px;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 60px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-block-color: black;
+  padding-bottom: 5px;
+}
+
+.mat-list-base[dense] .mat-list-item .mat-list-item-content,
+.mat-list-base[dense] .mat-list-option .mat-list-item-content {
+  padding: 0 !important;
+}
+.mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0 !important;
+}
+
+.mat-list-base {
+  padding-top: 0px;
+}
+
+.tierS {
+  background-color: green;
+}
+
+.tierA {
+  background-color: rgb(39, 128, 79);
+}
+
+.tierB {
+  background-color: rgb(77, 143, 77);
+}
+
+.tierC {
+  background-color: rgb(126, 158, 126);
+}

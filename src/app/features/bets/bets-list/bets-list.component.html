@@ -1,0 +1,17 @@
+<mat-toolbar color="accent" *ngIf="items && items.length > 0">
+  <span>{{ title }}</span>
+</mat-toolbar>
+<div class="mat-body" *ngIf="items && items.length > 0">
+  <mat-list role="list" gutterSize="3px">
+    <mat-list-item
+      role="listitem"
+      *ngFor="let bet of items; let i = index"
+      [ngClass]="{
+        winner: bet.win,
+        loser: !bet.win
+      }"
+    >
+      <app-bets-item-list style="width: 100%" [bet]="bet"></app-bets-item-list>
+    </mat-list-item>
+  </mat-list>
+</div>

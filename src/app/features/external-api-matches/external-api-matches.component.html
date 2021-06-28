@@ -1,0 +1,26 @@
+<div>
+  <!--------------- PARTIDAS EN VIVO --------------->
+  <external-api-match-list
+    [items]="currentMatches"
+    [title]="'Partidas en vivo'"
+    (onMatchCreated)="onMatchCreatedEvent($event)"
+  ></external-api-match-list>
+  <!--------------- PARTIDAS DE HOY --------------->
+  <external-api-match-list
+    [items]="todayMatches"
+    [title]="'Partidas de hoy'"
+    (onMatchCreated)="onMatchCreatedEvent($event)"
+  ></external-api-match-list>
+  <!--------------- PARTIDAS DE MAÑANA --------------->
+  <external-api-match-list
+    [items]="tomorrowMatches"
+    [title]="'Partidas de mañana'"
+    (onMatchCreated)="onMatchCreatedEvent($event)"
+  ></external-api-match-list>
+  <!--------------- PARTIDAS DE PROXIMOS DIAS --------------->
+  <external-api-match-list
+    [items]="nextDaysMatches"
+    [title]="'Próximos dias'"
+    (onMatchCreated)="onMatchCreatedEvent($event)"
+  ></external-api-match-list>
+</div>

@@ -1,0 +1,90 @@
+<mat-card class="match-card">
+  <mat-card-header>
+    <!-- div mat-card-avatar [style.background-image]="getBackground()"></div-->
+    <mat-card-title class="match-card-title">
+      <div fxLayout="row" fxFlexAlign="center" fxLayoutGap="5px">
+        <div
+          fxFlex="80"
+          fxLayout="column"
+          fxFlexAlign="center"
+          style="margin: 15px"
+        >
+          <span>{{ match.team1.name }} vs {{ match.team2.name }}</span>
+          <span class="mat-body">{{
+            match.date | date: "dd/MM/yyyy HH:mm"
+          }}</span>
+        </div>
+        <button mat-mini-fab color="black">
+          <mat-icon (click)="delete()">delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-title>
+
+    <!-- mat-card-subtitle *ngIf="isRunning">{{match.map | uppercase}} <span *ngIf="match.stars" class="material-icons md-18 yellow">stars</span>
+    </mat-card-subtitle-->
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutGap="20px" fxFlexAlign="center" class="mat-h3">
+      <div class="mat-body" *ngIf="bets.length > 0" fxFlex>
+        <mat-list role="list" gutterSize="3px">
+          <mat-list-item
+            role="listitem"
+            *ngFor="let bet of bets; let i = index"
+          >
+            <div fxFlex fxLayout="row" fxFlexAlign="center" fxLayoutGap="5px">
+              <span fxFlex="90" class="mat-body"
+                >{{ bet.betType }}
+                <span *ngIf="bet.winnerTeam">{{ bet.winnerTeam.name }}</span> -
+                {{ bet.price }} - {{ bet.odds }}</span
+              >
+              <mat-icon
+                fxFlex="10"
+                style="font-size: 20px"
+                [inline]="true"
+                (click)="deleteBet(bet)"
+                >delete</mat-icon
+              >
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- a mat-button href="https://gg.bet/en/esports/match/{{match.teams[0].name | replace : ' ' : '-' }}-vs-{{match.teams[1].name | replace : ' ' : '-' }}-{{match.time | date:'dd-MM':'+0000' }}" target="_blank">GG.BET</a>
+    <a mat-button (click)="showVideoFrame()">TWITCH</a>
+    <a mat-button target="_blank" href="https://www.hltv.org{{match.hltvLink}}" >HLTV</a>
+    <a mat-button (click)="showStats = true" >STATS</a-->
+
+    <div fxLayout="row" fxFlexAlign="center" style="margin: 15px">
+      <button mat-mini-fab color="accent">
+        <mat-icon (click)="addBet()">add</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>
+
+<!--iframe
+  id="video"
+  (click)="showVideoFrame()"
+  *ngIf="showVideo"
+  #video
+  style="
+    z-index: 1000;
+    object-fit: fill;
+    width: 50vw;
+    height: 50vh;
+    top: 0vw;
+    left: 25vw;
+    position: fixed;
+  "
+  [src]="getVideoLink()"
+  frameborder="0"
+  allowfullscreen
+>
+</iframe-->
+
+<app-match-stats [match]="match" *ngIf="showStats" (close)="showStats = false">
+  <div></div>
+</app-match-stats>

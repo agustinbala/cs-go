@@ -1,0 +1,47 @@
+.mat-card-actions .mat-button {
+  margin: 0px 0px;
+}
+
+.mat-card {
+  width: 325px;
+  height: 200px;
+  padding: 0px;
+  border: 1px solid #000;
+  border-radius: 10px !important;
+}
+
+.mat-card-actions {
+  position: absolute;
+  bottom: 15px;
+}
+
+.mat-card-avatar {
+  border-radius: 0%;
+  background-size: 100% 100% !important;
+  background-size: cover;
+}
+
+.material-icons.yellow {
+  color: #e0f806;
+  font-size: 18px;
+  position: relative;
+  bottom: -4px;
+}
+
+.mat-list-item-content {
+  padding: 0px 0px;
+}
+
+.match-card-title {
+  width: 325px;
+}
+
+.match-card {
+  padding: 15px;
+  background-color: rgb(224, 220, 213);
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 30px;
+}

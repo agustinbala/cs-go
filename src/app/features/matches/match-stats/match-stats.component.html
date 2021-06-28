@@ -1,0 +1,42 @@
+<div class="modal-overlay" (click)="closeDialog()"></div>
+<div class="modal">
+  <mat-toolbar color="accent">
+    <span>Estadisticas {{match.teams[0].name}} vs {{match.teams[1].name}}</span>
+  </mat-toolbar>
+  <div class="mat-body">
+    <table mat-table [dataSource]="stats.mapsStats" class="mat-elevation-z8" style="width:600px;">
+
+      <ng-container matColumnDef="map">
+        <th mat-header-cell *matHeaderCellDef> Mapa </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.map}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="team1">
+        <th mat-header-cell *matHeaderCellDef> {{match.teams[0].name}} </th>
+        <td mat-cell *matCellDef="let element">
+          <div >
+            <a class="row" target="_blank" href="https://www.htlv.org/{{element.team1MapDetailLink}}">
+              <mat-icon *ngIf="element.team1Pick">done</mat-icon> {{element.team1WinPercentage}}
+            </a>
+            <a class="row">{{element.team1MapTimesPlayed}}</a>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="team2">
+        <th mat-header-cell *matHeaderCellDef> {{match.teams[1].name}} </th>
+        <td mat-cell *matCellDef="let element">
+          <div>
+            <a class="row" target="_blank" href="https://www.htlv.org/{{element.team2MapDetailLink}}">
+              <mat-icon *ngIf="element.team2Pick">done</mat-icon> {{element.team2WinPercentage}}
+            </a>
+            <a class="row">{{element.team2MapTimesPlayed}}</a>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>

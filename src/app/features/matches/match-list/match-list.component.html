@@ -1,0 +1,8 @@
+<mat-grid-list cols="3" gutterSize="3px" rowHeight="1.5:1" style="margin: 8px">
+  <mat-grid-tile *ngFor="let match of items; let i = index">
+    <app-match-item-list
+      (onMatchDeleted)="getMatches()"
+      [match]="match"
+    ></app-match-item-list>
+  </mat-grid-tile>
+</mat-grid-list>

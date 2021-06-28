@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { MatchesComponent } from './features/matches/matches.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ContainerComponent } from "./features/container/container.component";
 
-const routes: Routes = [ { path: '**', component: MatchesComponent }];
+const routes: Routes = [{ path: "**", component: ContainerComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

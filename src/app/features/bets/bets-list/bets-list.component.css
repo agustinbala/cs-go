@@ -1,0 +1,34 @@
+.winner {
+  background-color: rgb(126, 158, 126);
+}
+
+.loser {
+  background-color: rgb(231, 139, 116);
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 30px;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 70px;
+  border-bottom-style: solid;
+  border-bottom-width: 0.75px;
+  border-block-color: black;
+  padding: 0px;
+}
+
+.mat-list-base[dense] .mat-list-item .mat-list-item-content,
+.mat-list-base[dense] .mat-list-option .mat-list-item-content {
+  padding: 0 !important;
+}
+.mat-list-base .mat-list-item .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0 !important;
+}
+
+.mat-list-base {
+  padding-top: 0px;
+}

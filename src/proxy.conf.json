@@ -1,0 +1,27 @@
+{
+  "/csmoney": {
+    "target": "https://cs.money/3.0/load_user_inventory/730?limit=60&noCache=true&offset=0&order=desc&sort=price",
+    "secure": true,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "headers": {
+      "Cookie": "new_language=es; visitor_id=6e730807-1a18-4bf7-babc-c6aa254810b3; steamid=76561198400640069; avatar=https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2f/2f2a97214572baa7d6e87383ec26255c30761b31_medium.jpg; username=PapasConCheddar; registered_user=true; _lr_uf_-uthaii=e66814de-1a84-4524-9959-8caf3b9c7da7; _ga=GA1.2.1051075448.1616173817; _gcl_au=1.1.726663045.1616173817; _fbp=fb.1.1616173818077.422137217; _ym_uid=1602701346835162294; _ym_d=1616173819; csgo_ses=e5f8723a66908c9e158685d65198bd058c15a070b89a3534a5c148cfe1e34d87; support_token=7687e1b095ed7f9b961d53215b8e3a83144a4f6e0345660138264739900f1f84; amp_d77dd0=gofx7I0g8n45bqVBjXT5DQ...1f58ts96g.1f58tt3gv.0.1.1; amp_d77dd0_cs.money=gofx7I0g8n45bqVBjXT5DQ...1f58ts96g.1f58tt44c.7.1.8; onboarding__skin_quick_view=false; minPrice=120; maxPrice=200; maxFloat=0.675; rarity=Covert; hasStickers=false; sort=price; order=desc; _gid=GA1.2.1673173377.1623871206; _ym_isad=2; amplitude_id_c14fa5162b6e034d1c3b12854f3a26f5cs.money=eyJkZXZpY2VJZCI6IjFjNjA4NmI3LTM5MjItNDQ5OS1iNjI1LWJjOTJkMmFmMzg5N1IiLCJ1c2VySWQiOiI3NjU2MTE5ODQwMDY0MDA2OSIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTYyMzkzNTIxODc3NCwibGFzdEV2ZW50VGltZSI6MTYyMzkzNTIxODc3NywiZXZlbnRJZCI6MTUxLCJpZGVudGlmeUlkIjo1LCJzZXF1ZW5jZU51bWJlciI6MTU2fQ==; _dc_gtm_UA-77178353-1=1; _ym_visorc=w; _gat_UA-77178353-1=1",
+      "accept": "application/json, text/plain, */*",
+      "accept-encoding": "gzip, deflate, br",
+      "accept-language": "es-419,es;q=0.9,en;q=0.8",
+      "x-client-app": "web",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua": "Google Chrome;v=91",
+      "authority": "cs.money"
+    }
+  },
+  "/api": {
+    "target": "http://localhost:8083",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

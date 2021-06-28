@@ -1,0 +1,87 @@
+<mat-dialog-content>
+  <div fxLayout="column" fxFlexAlign="center" fxLayoutGap="10px">
+    <form [formGroup]="betForm" novalidate>
+      <span class="mat-h2"
+        >{{ match.team1.name }} vs {{ match.team2.name }}</span
+      >
+      <div fxLayout="row" fxFlexAlign="center" fxLayoutGap="10px">
+        <mat-form-field fxFlex="45" appearance="fill" style="margin-top: 15px">
+          <mat-label>Tipo:</mat-label>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let item of types" [value]="item.id">
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="
+              betForm.controls.type.touched && betForm.controls.type.invalid
+            "
+          >
+            <span *ngIf="betForm.controls.type.errors.required"
+              >This field is mandatory.</span
+            >
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex="45" appearance="fill" style="margin-top: 15px">
+          <mat-label>Equipo:</mat-label>
+          <mat-select formControlName="team">
+            <mat-option [value]="match.team1.id">
+              {{ match.team1.name }}
+            </mat-option>
+            <mat-option [value]="match.team2.id">
+              {{ match.team2.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Apuesta</mat-label>
+        <input
+          matInput
+          type="number"
+          class="input-number"
+          placeholder="0"
+          formControlName="price"
+        />
+        <span matPrefix>$&nbsp;</span>
+        <mat-error
+          *ngIf="
+            betForm.controls.price.touched && betForm.controls.price.invalid
+          "
+        >
+          <span *ngIf="betForm.controls.price.errors.required"
+            >This field is mandatory.</span
+          >
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" style="width: 100%">
+        <mat-label>Porcentaje</mat-label>
+        <input
+          matInput
+          type="number"
+          class="input-number"
+          placeholder="0"
+          formControlName="odds"
+        />
+        <span matPrefix>$&nbsp;</span>
+        <mat-error
+          *ngIf="betForm.controls.odds.touched && betForm.controls.odds.invalid"
+        >
+          <span *ngIf="betForm.controls.odds.errors.required"
+            >This field is mandatory.</span
+          >
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div fxLayout="row" fxFlexAlign="end" fxLayoutGap="5px" fxFlex="100">
+    <button fxFlex="50" mat-raised-button color="accent" (click)="cancel()">
+      Cancelar
+    </button>
+    <button fxFlex="50" mat-raised-button color="primary" (click)="save()">
+      Guardar
+    </button>
+  </div>
+</mat-dialog-actions>

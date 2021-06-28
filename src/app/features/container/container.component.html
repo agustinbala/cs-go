@@ -1,0 +1,34 @@
+<div class="mat-typography">
+  <mat-toolbar color="primary">
+    <div fxFlex="20" fxLayout="column" fxFlexAlign="center">
+      <div fxLayout="column" fxFlexAlign="start">
+        <span>Partidas</span>
+      </div>
+    </div>
+    <div fxFlex="80" fxLayout="column" fxFlexAlign="end">
+      <div fxLayout="row" fxFlex="100" fxFlexAlign="end">
+        <app-summary></app-summary>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div fxLayout="row">
+    <app-external-api-matches
+      (onMatchCreated)="onMatchCreatedEvent($event)"
+      fxFlex="20"
+    >
+    </app-external-api-matches>
+    <app-match-list
+      [refreshMatches]="refreshMatch"
+      fxFlex="60"
+    ></app-match-list>
+    <app-bets
+      style="
+        border-left-color: black;
+        border-left-width: 1px;
+        border-left-style: solid;
+      "
+      fxFlex="20"
+    >
+    </app-bets>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div style="width: 100%" class="mat-body">
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <div>{{ bet.match.teams[0].name }} vs {{ bet.match.teams[1].name }}</div>
+    </div>
+    <div fxLayout="row">
+      <div>
+        {{ bet.betType }}
+        <span *ngIf="bet.winnerTeam">{{ bet.winnerTeam.name }}</span> -
+        {{ bet.price }} - {{ bet.odds }}
+      </div>
+    </div>
+    <div fxLayout="row">
+      <span>{{ bet.date | date: "HH:mm dd/MM/yyyy" }}</span>
+    </div>
+    <div fxLayout="row" *ngIf="bet.match.winner">
+      <span>Ganador {{ bet.match.winner.name }}</span>
+    </div>
+    <!--  div fxLayout="row" *ngIf="!bet.match.winner">
+      <span>Resultado </span> <mat-icon>thumb_up</mat-icon
+      ><mat-icon>thumb_down</mat-icon>
+    </div-->
+  </div>
+</div>

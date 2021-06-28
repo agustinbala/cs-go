@@ -1,0 +1,38 @@
+<div style="width: 100%" class="mat-body">
+  <div fxLayout="column">
+    <div fxLayout="row">
+      <div fxFlex="75">
+        <div *ngIf="isRunning">
+          {{ match.teams[0].name }} ({{ match.teams[0].score }}) vs
+          {{ match.teams[1].name }} ({{ match.teams[1].score }})
+        </div>
+        <div *ngIf="!isRunning">
+          {{ match.teams[0].name }} vs {{ match.teams[1].name }}
+        </div>
+        <div *ngIf="isRunning">
+          {{ match.map | uppercase }}
+        </div>
+        <div *ngIf="!isRunning">
+          <span
+            >{{ match.time | date: "HH:mm dd/MM/yyyy" }} -
+            {{ match.map | uppercase }}</span
+          >
+        </div>
+      </div>
+      <div fxFlex="25" fxLayout="row" fxFlexAlign="center">
+        <div fxLayout="row" fxFlexAlign="center">
+          <a
+            mat-button
+            target="_blank"
+            href="https://www.hltv.org{{ match.hltvLink }}"
+            >HLTV</a
+          ><a>
+            <mat-icon style="margin-top: 6px" (click)="addMatch(match)"
+              >bookmark_add</mat-icon
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
