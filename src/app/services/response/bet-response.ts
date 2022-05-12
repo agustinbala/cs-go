@@ -7,6 +7,7 @@ export interface BetResponse {
   date: string;
   match: BetMatchResponse;
   winnerTeam: TeamResponse;
+  finished: boolean;
 }
 
 export interface BetMatchResponse {

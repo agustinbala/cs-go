@@ -14,6 +14,7 @@ import {
 export class BetsComponent implements OnInit {
   finishedBets: IBet[];
   currentBets: IBet[];
+  summary = 0;
 
   constructor(private betsService: BetsService) {}
 
@@ -22,8 +23,18 @@ export class BetsComponent implements OnInit {
       let items = bets.map((bet) => {
         return this.convertBet(bet);
       });
-      this.currentBets = items.filter((bet) => bet.win == null);
-      this.finishedBets = items.filter((bet) => bet.win != null);
+
+      this.currentBets = items.filter((bet) => !bet.finished);
+      this.finishedBets = items.filter((bet) => bet.finished);
+      this.finishedBets.forEach((item) => {
+        let result = 0;
+        if (item.win) {
+          result = item.price * item.odds - item.price;
+        } else {
+          result = item.price * -1;
+        }
+        this.summary = this.summary + result;
+      });
     });
   }
 
@@ -36,6 +47,7 @@ export class BetsComponent implements OnInit {
     const date = bet.date;
     const match = this.convertMatch(bet.match);
     let winnerTeam: IBetTeam = null;
+    const finished = bet.finished;
 
     if (bet.winnerTeam) {
       winnerTeam = {
@@ -53,6 +65,7 @@ export class BetsComponent implements OnInit {
       date,
       match,
       winnerTeam,
+      finished,
     };
   }
 

@@ -1,4 +1,7 @@
-<div>
+<div fxLayout="column">
+  <div style="margin: 20px 20px" class="mat-h1" fxLayout="row">
+    <span>Resultado {{ summary | currency }}</span>
+  </div>
   <app-bets-list
     [items]="currentBets"
     [title]="'Apuestas en vivo'"

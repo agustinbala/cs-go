@@ -10,7 +10,16 @@ import { BetResponse } from "src/app/services/response/bet-response";
 export class BetsItemListComponent implements OnInit {
   @Input() bet: IBet;
 
+  result = "";
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.bet.win) {
+      this.result = "$" + (this.bet.price * this.bet.odds - this.bet.price);
+      this.result = this.result.substring(0, 5);
+    } else {
+      this.result = "- $" + this.bet.price;
+    }
+  }
 }

@@ -36,4 +36,9 @@ export class MatchesService {
     const url = environment.api + "/matches/" + id + "/bets";
     return this.http.get<BetResponse[]>(url).toPromise();
   }
+
+  async winner(idMatch: number, idTeam: number): Promise<MatchResponse> {
+    const url = environment.api + "/matches/" + idMatch + "/winner/" + idTeam;
+    return this.http.post<MatchResponse>(url, null).toPromise();
+  }
 }

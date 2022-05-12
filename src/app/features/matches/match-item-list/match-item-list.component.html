@@ -9,7 +9,10 @@
           fxFlexAlign="center"
           style="margin: 15px"
         >
-          <span>{{ match.team1.name }} vs {{ match.team2.name }}</span>
+          <span (click)="winnerTeam(match.team1)">{{ match.team1.name }}</span>
+          <span (click)="winnerTeam(match.team2)">
+            vs {{ match.team2.name }}</span
+          >
           <span class="mat-body">{{
             match.date | date: "dd/MM/yyyy HH:mm"
           }}</span>
@@ -33,13 +36,30 @@
             *ngFor="let bet of bets; let i = index"
           >
             <div fxFlex fxLayout="row" fxFlexAlign="center" fxLayoutGap="5px">
-              <span fxFlex="90" class="mat-body"
+              <span fxFlex="76" class="mat-body"
                 >{{ bet.betType }}
                 <span *ngIf="bet.winnerTeam">{{ bet.winnerTeam.name }}</span> -
-                {{ bet.price }} - {{ bet.odds }}</span
+                {{ bet.price | currency }} - {{ bet.odds }}</span
+              >
+
+              <mat-icon
+                *ngIf="!bet.finished"
+                fxFlex="8"
+                style="font-size: 20px"
+                [inline]="true"
+                (click)="win(bet)"
+                >done</mat-icon
               >
               <mat-icon
-                fxFlex="10"
+                *ngIf="!bet.finished"
+                fxFlex="8"
+                style="font-size: 20px"
+                [inline]="true"
+                (click)="lose(bet)"
+                >close</mat-icon
+              >
+              <mat-icon
+                fxFlex="8"
                 style="font-size: 20px"
                 [inline]="true"
                 (click)="deleteBet(bet)"

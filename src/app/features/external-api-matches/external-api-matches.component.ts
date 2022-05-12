@@ -156,12 +156,7 @@ export class ExternalAPIMatchesComponent implements OnInit {
   }
 
   isTopTier(match: IExternalAPIMatch) {
-    return (
-      match.tier == "s" ||
-      match.tier == "a" ||
-      match.tier == "b" ||
-      match.tier == "c"
-    );
+    return true;
   }
 
   onMatchCreatedEvent(event: MatchResponse) {

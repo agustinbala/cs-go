@@ -7,6 +7,7 @@ export interface IBet {
   date: string;
   match: IBetMatch;
   winnerTeam: IBetTeam;
+  finished: boolean;
 }
 
 export interface IBetMatch {

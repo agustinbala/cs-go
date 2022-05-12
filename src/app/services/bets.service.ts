@@ -33,4 +33,14 @@ export class BetsService {
     const url = environment.api + "/bets/" + id;
     return this.http.delete<BetResponse>(url).toPromise();
   }
+
+  async win(id: number): Promise<BetResponse> {
+    const url = environment.api + "/bets/" + id + "/win";
+    return this.http.put<BetResponse>(url, null).toPromise();
+  }
+
+  async lost(id: number): Promise<BetResponse> {
+    const url = environment.api + "/bets/" + id + "/lost";
+    return this.http.put<BetResponse>(url, null).toPromise();
+  }
 }

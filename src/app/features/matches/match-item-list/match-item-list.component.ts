@@ -67,7 +67,7 @@ export class MatchItemListComponent implements OnInit {
     const odds = bet.odds;
     const win = bet.win;
     const date = bet.date;
-
+    const finished = bet.finished;
     let winnerTeam: IBetTeam = null;
 
     if (bet.winnerTeam) {
@@ -86,12 +86,31 @@ export class MatchItemListComponent implements OnInit {
       date,
       match: null,
       winnerTeam,
+      finished,
     };
   }
 
   deleteBet(bet: BetResponse) {
     this.betService.delete(bet.id).then(() => {
       this.getBets();
+    });
+  }
+
+  win(bet: BetResponse) {
+    this.betService.win(bet.id).then(() => {
+      this.getBets();
+    });
+  }
+
+  lose(bet: BetResponse) {
+    this.betService.lost(bet.id).then(() => {
+      this.getBets();
+    });
+  }
+
+  winnerTeam(team: IBetTeam) {
+    this.matchesService.winner(this.match.id, team.id).then(() => {
+      this.onMatchDeleted.emit(this.match);
     });
   }
 

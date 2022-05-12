@@ -1,5 +1,5 @@
 <div style="width: 100%" class="mat-body">
-  <div fxLayout="column">
+  <div fxLayout="column" fxFlex="75">
     <div fxLayout="row">
       <div>{{ bet.match.teams[0].name }} vs {{ bet.match.teams[1].name }}</div>
     </div>
@@ -7,11 +7,8 @@
       <div>
         {{ bet.betType }}
         <span *ngIf="bet.winnerTeam">{{ bet.winnerTeam.name }}</span> -
-        {{ bet.price }} - {{ bet.odds }}
+        {{ bet.price | currency }} - {{ bet.odds }}
       </div>
-    </div>
-    <div fxLayout="row">
-      <span>{{ bet.date | date: "HH:mm dd/MM/yyyy" }}</span>
     </div>
     <div fxLayout="row" *ngIf="bet.match.winner">
       <span>Ganador {{ bet.match.winner.name }}</span>
@@ -21,4 +18,13 @@
       ><mat-icon>thumb_down</mat-icon>
     </div-->
   </div>
+  <div *ngIf="bet.finished" fxLayout="column" fxFlex="25">
+    <div fxLayout="row" fxFlexAlign="center" fxFlex>
+      <span
+        style="font-size: 24px; align-items: center; display: inline-flex"
+        >{{ result }}</span
+      >
+    </div>
+  </div>
 </div>
+ 

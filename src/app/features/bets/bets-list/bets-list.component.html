@@ -7,8 +7,8 @@
       role="listitem"
       *ngFor="let bet of items; let i = index"
       [ngClass]="{
-        winner: bet.win,
-        loser: !bet.win
+        winner: bet.finished && bet.win,
+        loser: bet.finished && !bet.win
       }"
     >
       <app-bets-item-list style="width: 100%" [bet]="bet"></app-bets-item-list>
